@@ -27,13 +27,13 @@ This project is a comprehensive user authentication system that includes functio
 ## Installation Instructions
 ### Prerequisites
 - Node.js installed on your local machine.
-- MySQL Workbench or any SQL platform installed.
+- MONGODB INSTALL for data store.
 ### Clone the Repository
 
 Install my-project with npm
 
 ```bash
- git clone https://github.com/Vaibhav0209/evital.git
+ git clone https://github.com/akashvadgasiya18/eVitalrx.git
 
 ```
 
@@ -95,7 +95,7 @@ yarn sequelize-cli db:migrate
 ### User Registration
 
 1. Navigate to the registration page.
-2. Fill in the required fields (e.g., email, password).
+2. Fill in the required fields (e.g.,username email, password, gender, mobile number etc.).
 3. Click the **Register** button.
 4. A verification email with an OTP will be sent to the provided email address.
 
@@ -118,19 +118,19 @@ yarn sequelize-cli db:migrate
 
 1. Navigate to the **Forgot Password** page.
 2. Enter your registered email address.
-3. A reset link or OTP will be sent to your email.
+3. A reset link will be sent to your email.
 
 ### Reset Password
 
-1. Click the reset link or enter the OTP sent to your email.
-2. Enter a new password and confirm it.
+1. Click the reset link sent to your email.
+2. Enter a new password it.
 3. Submit the form to reset your password.
 
 ### Update Profile
 
 1. Navigate to the **Profile** page after logging in.
 2. Update your information as needed.
-3. Click the **Save** button to update your profile.
+3. Click the **Update** button to update your profile.
 
 
 
