@@ -1,0 +1,40 @@
+#title-body {
+  position: relative;
+  height: 100vh;
+}
+
+#title-body .title-body {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.title-body {
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-body .title-body-task {
+  height: 100px;
+  z-index: -1;
+}
+.title-body .title-body-task h1 {
+  font-family: Poppins;
+  color: #9b9a9a;
+  font-weight: 900;
+  font-size: 100px;
+  margin: 0px;
+  position: absolute;
+  top: 8rem;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+}
