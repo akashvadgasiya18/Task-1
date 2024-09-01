@@ -56,7 +56,7 @@ router.post("/register", async (req, res) => {
           otp,
         });
 
-        console.log(userData);
+        // console.log(userData);
         await userData.save();
         res.send({ success: true, userData });
       }
@@ -72,13 +72,7 @@ router.post("/verifyOTP", async (req, res) => {
   const { otp, email } = req.body;
   console.log(req.body);
 
-  // const { votp, email } = req.body;
   const user = await User.findOne({ email: email, otp: otp });
-  // console.log(typeof user.otp, typeof otp, 77);
-  // console.log(user);
-  // console.log(otp == user.otp);
-
-  // console.log(email);
   if (user) {
     const otp = user.otp;
 
@@ -99,15 +93,12 @@ router.post("/verifyOTP", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  // console.log(req.body);
   try {
     let token;
     const userDetail = await User.findOne({ email: email });
-    // console.log(userDetail.password);
+
     if (userDetail) {
       const match = await bcrypt.compare(password, userDetail.password);
-      // console.log(match);
-
       if (!match) {
         res.status(413).json({ error: "credential not matched.." });
       } else {
@@ -224,19 +215,6 @@ router.post("/reset-password/:id/:token", async (req, res) => {
 });
 
 // -------------------------------edit user details and update details ------------------------------
-
-const verifyUser = async (req, res, next) => {
-  try {
-    const token = req.cookies.token;
-    if (!token) {
-      return res.json({ status: false, message: "no token" });
-    }
-    const decode = await jwt.verify(token, process.env.SECRET_KEY);
-    next();
-  } catch (error) {
-    return res.json(error);
-  }
-};
 
 router.get("/edituserdata/:id", async (req, res) => {
   try {

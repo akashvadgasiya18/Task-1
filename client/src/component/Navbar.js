@@ -4,9 +4,8 @@ import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
-  const [tokn, setTokn] = useState(localStorage.getItem("Authdata"));
+  const [tokn, setTokn] = useState(localStorage.getItem("RToken"));
   const handleLogout = () => {
-    localStorage.removeItem("Authdata");
     setTokn(localStorage.removeItem("RToken"));
   };
 

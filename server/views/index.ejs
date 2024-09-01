@@ -16,65 +16,30 @@
       var status = "<%- JSON.stringify(status)%>";
       if (status == 201) {
         alert("Password Changed");
-        // $('#submitButton1').toast({
-        //     text: 'Password changed..',
-        //     icon: 'success',
-        //     position:'top-center',
-        // });
         window.location.href = "http://localhost:3000/login";
       } else if (status == 402) {
         alert("Kindly fill the data");
-
-        // toastr.error('fill all data');
-
-        //     text: 'Kindly fill the data.',
-        //     icon: 'warning',
-        //     position:'top-center',
-        // });
       } else if (status == 429) {
         alert("password length should be greater than 5.");
-        // $.toast({
-        //     text: 'Kindly fill the data.',
-        //     icon: 'warning',
-        //     position:'top-center',
-        // });
       } else if (status == 412) {
         alert("Password and confirm password should be same");
-        // $.toast({
-        //     text: 'Password and confirm password should be same.',
-        //     icon: 'warning',
-        //     position:'top-center',
-        // });
       } else if (status == 411) {
         alert("Something wrong");
-        // $.toast({
-        //     text: 'Something wrong',
-        //     icon: 'warning',
-        //     position:'top-center',
-        // });
       }
     </script>
     <style>
-      .login-form {
-        text-align: center;
-        align-items: center;
-        width: 100%;
-        margin-top: 20px;
-      }
       .container .login-form {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
-        width: 100%;
+        text-align: center;
+        flex-direction: column;
         font-family: Poppins;
-        /* max-width: 570px; */
-
-        margin: 0 auto;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
         box-sizing: border-box;
+        max-width: 550px;
+        border-radius: 0.5rem;
+        background-color: white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
       h2 {
         padding-bottom: 30px;
@@ -82,29 +47,30 @@
         font-family: "Poppins";
       }
 
-      input:disabled {
-        cursor: not-allowed;
-        border: solid 1px #eee;
-      }
       .container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: auto;
+        margin-top: 8rem;
       }
       #submitButton1 {
         width: 100%;
-        height: 40px;
+        padding: 10px 10px;
         margin: auto;
+        border: none;
         display: block;
         color: #fff;
-        background-color: #065492;
-        border-color: #065492;
-        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+        background-color: #000000;
         box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
         border-radius: 4px;
         font-size: 20px;
+        font-weight: 600;
         cursor: pointer;
+      }
+      #submitButton1:hover {
+        color: #000000;
+        background-color: white;
+        border: 1px solid black;
       }
       .cardStyle {
         width: 100%;
@@ -117,18 +83,18 @@
         box-shadow: 0px 0 2px 0 rgba(0, 0, 0, 0.25);
       }
       .login-form input {
-        width: 100%;
-        padding: 10px;
+        padding: 12px;
         margin-bottom: 20px;
         border: none;
         border-radius: 5px;
         background-color: #f4f4f4;
         font-size: 1rem;
+        width: 90%;
       }
     </style>
   </head>
   <body>
-    <div style="background-color: lightblue; height: 100%; width: 100%">
+    <div>
       <div class="container">
         <form method="post" action="" class="login-form">
           <div
@@ -142,7 +108,8 @@
               style="
                 padding-bottom: 20px;
                 text-align: center;
-                font-family: poppins;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri,
+                  'Trebuchet MS', sans-serif;
                 font-weight: 700;
               "
             >
@@ -157,9 +124,8 @@
               placeholder="Enter password"
               name="password"
               id="password"
-              style="margin-top: 20px"
             />
-            <input type="submit" value="submit" id="submitButton1" />
+            <input type="submit" value="Submit" id="submitButton1" />
           </div>
         </form>
       </div>

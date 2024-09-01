@@ -59,7 +59,7 @@ const Register = () => {
     });
     const data = await response.json();
     // console.log(data);
-    localStorage.setItem("Authdata", JSON.stringify(data.userData));
+    window.localStorage.setItem("Authdata", JSON.stringify(data.userData));
     if (
       !username ||
       !email ||

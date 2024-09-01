@@ -33,7 +33,7 @@ const Login = () => {
     const data1 = await response.json();
     // console.log("logindata", data1);
 
-    localStorage.setItem("RToken", JSON.stringify(data1));
+    window.localStorage.setItem("RToken", JSON.stringify(data1));
 
     if (!email || !password) {
       toast.error("all the fields required..");
@@ -48,7 +48,7 @@ const Login = () => {
   };
   return (
     <>
-    <Navbar />
+      <Navbar />
       <div className="register-container">
         <div className="image-container">
           <img src={i1} alt="Placeholder" />
